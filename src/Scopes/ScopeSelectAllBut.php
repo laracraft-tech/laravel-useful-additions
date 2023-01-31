@@ -11,11 +11,11 @@ trait ScopeSelectAllBut
     /**
      * Scope a query to only exclude specific Columns.
      *
-     * @param Builder $query
+     * @param  Builder  $query
      * @param $columns
      * @return Builder
      */
-    public function scopeSelectAllBut($query, $columns): \Illuminate\Database\Eloquent\Builder
+    public function scopeSelectAllBut($query, $columns): Builder
     {
         $tableColumns = $this->getTableColumns();
 
@@ -26,7 +26,6 @@ trait ScopeSelectAllBut
         return $query->select(array_diff($tableColumns, $columns));
     }
 
-
     /**
      * Shows All the columns of the Corresponding Table of Model
      *
@@ -35,6 +34,7 @@ trait ScopeSelectAllBut
      * NOTE: COLUMN NAMES OF TABLE WILL BE CACHED UNTIL CONTENTS OF MIGRATIONS DIRECTORY IS ADDED OR DELETED.
      * MODIFYING THE CONTENTS OF FILES INSIDE THE MIGRATIONS DIRECTORY WILL NOT RE-CACHE THE COLUMNS
      * Whenever you make a new deployment/migration you can clear the cache.
+     *
      * @return array
      **/
     public function getTableColumns(): array

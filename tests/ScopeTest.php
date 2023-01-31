@@ -4,7 +4,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use LaracraftTech\LaravelUsefulTraits\Enums\EnumToArray;
 use LaracraftTech\LaravelUsefulTraits\Scopes\ScopeSelectAllBut;
 
 beforeEach(function () {
@@ -30,7 +29,7 @@ it('can query with exclude', function () {
     };
 
     expect($class::query()->selectAllBut(['foo'])->first()->toArray())->toBe([
-        "bar" => "bar",
-        "quz" => "quz",
+        'bar' => 'bar',
+        'quz' => 'quz',
     ]);
 });

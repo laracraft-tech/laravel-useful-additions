@@ -12,12 +12,11 @@ it('can give array of enum', function () {
         case Success = 3;
     }
 
-    expect(PaymentType::names())->toBe(["Pending", "Failed", "Success"])
+    expect(PaymentType::names())->toBe(['Pending', 'Failed', 'Success'])
         ->and(PaymentType::values())->toBe([1, 2, 3])
         ->and(PaymentType::array())->toBe([
-            "Pending" => 1,
-            "Failed" => 2,
-            "Success" => 3,
+            'Pending' => 1,
+            'Failed' => 2,
+            'Success' => 3,
         ]);
-
 });

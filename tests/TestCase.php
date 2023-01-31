@@ -3,8 +3,8 @@
 namespace LaracraftTech\LaravelUsefulTraits\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use LaracraftTech\LaravelUsefulTraits\LaravelUsefulTraitsServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
