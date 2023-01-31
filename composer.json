@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "laracraft-tech/laravel-useful-traits",
+    "description": "A collection of useful Laravel traits!",
     "keywords": [
-        ":vendor_name",
+        "laracraft-tech",
         "laravel",
-        ":package_slug"
+        "laravel-useful-traits"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/laracraft-tech/laravel-useful-traits",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Zacharias Creutznacher",
+            "email": "zacharias@laracraft.tech",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "LaracraftTech\\LaravelUsefulTraits\\": "src",
+            "LaracraftTech\\LaravelUsefulTraits\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "LaracraftTech\\LaravelUsefulTraits\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "LaracraftTech\\LaravelUsefulTraits\\LaravelUsefulTraitsServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelUsefulTraits": "LaracraftTech\\LaravelUsefulTraits\\Facades\\LaravelUsefulTraits"
             }
         }
     },

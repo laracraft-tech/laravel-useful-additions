@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace LaracraftTech\LaravelUsefulTraits;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use LaracraftTech\LaravelUsefulTraits\Commands\LaravelUsefulTraitsCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class LaravelUsefulTraitsServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,6 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->name('laravel-useful-traits');
     }
 }
