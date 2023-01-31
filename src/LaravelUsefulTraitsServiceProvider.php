@@ -4,7 +4,6 @@ namespace LaracraftTech\LaravelUsefulTraits;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use LaracraftTech\LaravelUsefulTraits\Commands\LaravelUsefulTraitsCommand;
 
 class LaravelUsefulTraitsServiceProvider extends PackageServiceProvider
 {
