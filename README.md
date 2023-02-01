@@ -6,6 +6,8 @@
 [![License](https://img.shields.io/packagist/l/laracraft-tech/laravel-useful-traits.svg?style=flat-square)](https://packagist.org/packages/laracraft-tech/laravel-useful-traits)
 <!--[![Total Downloads](https://img.shields.io/packagist/dt/laracraft-tech/laravel-useful-traits.svg?style=flat-square)](https://packagist.org/packages/laracraft-tech/laravel-useful-traits)-->
 
+Here we will over time share some useful Laravel traits we need in our daily work.
+
 ## Installation
 
 You can install the package via composer:
