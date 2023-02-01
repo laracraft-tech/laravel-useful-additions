@@ -73,13 +73,6 @@ PaymentType::values();  // return [1, 2, 3]
 PaymentType::array();   // return ['Pending' => 1, 'Failed' => 2, 'Success' => 3]
 ```
 
-***Note***: Since you can't do a native "select all but x,y,z" in mysql, we need to query (and cache) the existing columns of the table,
-and then exclude the given columns which should be ignored (not selected) from the existing columns.
-
-***Cache***: Column names of each table will be cached until contents of migrations directory is added or deleted.
-Modifying the contents of files inside the migrations directory will not re-cache the columns.
-Consider to clear the cache whenever you make a new deployment/migration!
-
 ## Testing
 
 ```bash
