@@ -1,11 +1,11 @@
 <?php
 
-use LaracraftTech\LaravelUsefulTraits\Enums\EnumToArray;
+use LaracraftTech\LaravelUsefulTraits\UsefulEnums;
 
 it('can give array of enum', function () {
     enum PaymentType: int
     {
-        use EnumToArray;
+        use UsefulEnums;
 
         case Pending = 1;
         case Failed = 2;

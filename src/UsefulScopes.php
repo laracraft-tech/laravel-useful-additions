@@ -1,29 +1,29 @@
 <?php
 
-namespace LaracraftTech\LaravelUsefulTraits\Scopes;
+namespace LaracraftTech\LaravelUsefulTraits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Cache;
 use InvalidArgumentException;
 
-trait ScopeSelectAllBut
+trait UsefulScopes
 {
     /**
      * Scope a query to only exclude specific Columns.
      *
-     * @param  Builder  $query
-     * @param $columns
+     * @param Builder $query
+     * @param $excludeColumns
      * @return Builder
      */
-    public function scopeSelectAllBut($query, $columns): Builder
+    public function scopeSelectAllBut(Builder $query, array $excludeColumns): Builder
     {
-        $tableColumns = $this->getTableColumns();
+        $existingColumns = $this->getTableColumns();
 
-        if ($columns == $tableColumns) {
+        if ($excludeColumns == $existingColumns) {
             throw new InvalidArgumentException('You can not exclude all columns!');
         }
 
-        return $query->select(array_diff($tableColumns, $columns));
+        return $query->select(array_diff($existingColumns, $excludeColumns));
     }
 
     /**
@@ -31,8 +31,8 @@ trait ScopeSelectAllBut
      *
      * If You need to get all the Columns of the Model Table.
      * Useful while including the columns in search.
-     * NOTE: COLUMN NAMES OF TABLE WILL BE CACHED UNTIL CONTENTS OF MIGRATIONS DIRECTORY IS ADDED OR DELETED.
-     * MODIFYING THE CONTENTS OF FILES INSIDE THE MIGRATIONS DIRECTORY WILL NOT RE-CACHE THE COLUMNS
+     * NOTE: column names of table will be cached until contents of migrations directory is added or deleted.
+     * modifying the contents of files inside the migrations directory will not re-cache the columns
      * Whenever you make a new deployment/migration you can clear the cache.
      *
      * @return array

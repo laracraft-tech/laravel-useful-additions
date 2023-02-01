@@ -1,8 +1,8 @@
 <?php
 
-namespace LaracraftTech\LaravelUsefulTraits\Enums;
+namespace LaracraftTech\LaravelUsefulTraits;
 
-trait EnumToArray
+trait UsefulEnums
 {
     public static function names(): array
     {

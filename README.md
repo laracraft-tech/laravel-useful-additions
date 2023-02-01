@@ -18,14 +18,50 @@ composer require laracraft-tech/laravel-useful-traits
 
 ## Usage
 
-### `EnumToArray`
+The following traits are provided in the `LaracraftTech`-namespace:
+
+### UsefulScopes
+
+#### `selectAllBut`
+
+Select all columns but given excluded array.
 
 ```php
-use LaracraftTech\LaravelUsefulTraits\Enums\EnumToArray;
+use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
+
+DB::table('scope_test_table')->insert([
+    'foo' => 'foo',
+    'bar' => 'bar',
+    'quz' => 'quz',
+]);
+
+$class = new class extends Model
+{
+    use UsefulScopes;
+
+    protected $table = 'scope_test_table';
+};
+
+$class::query()->selectAllBut(['foo'])->first()->toArray();
+// return ['bar' => 'bar', 'quz' => 'quz']
+```
+***Note***: Since you can't do a native "select all but x,y,z" in mysql, we need to query (and cache) the existing columns of the table,
+and then exclude the given columns which should be ignored (not selected) from the existing columns.
+
+***Cache***: Column names of each table will be cached until contents of migrations directory is added or deleted.
+Modifying the contents of files inside the migrations directory will not re-cache the columns.
+Consider to clear the cache whenever you make a new deployment/migration!
+
+### UsefulEnums
+
+#### `names, values, array`
+
+```php
+use LaracraftTech\LaravelUsefulTraits\UsefulEnums;
 
 enum PaymentType: int
 {
-    use EnumToArray;
+    use UsefulEnums;
 
     case Pending = 1;
     case Failed = 2;
@@ -35,26 +71,6 @@ enum PaymentType: int
 PaymentType::names();   // return ['Pending', 'Failed', 'Success']
 PaymentType::values();  // return [1, 2, 3]
 PaymentType::array();   // return ['Pending' => 1, 'Failed' => 2, 'Success' => 3]
-```
-
-### `ScopeSelectAllBut`
-
-```php
-DB::table('scope_test_table')->insert([
-    'foo' => 'foo',
-    'bar' => 'bar',
-    'quz' => 'quz',
-]);
-
-$class = new class extends Model
-{
-    use ScopeSelectAllBut;
-
-    protected $table = 'scope_test_table';
-};
-
-$class::query()->selectAllBut(['foo'])->first()->toArray();
-// return ['bar' => 'bar', 'quz' => 'quz']
 ```
 
 ## Testing

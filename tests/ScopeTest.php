@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use LaracraftTech\LaravelUsefulTraits\Scopes\ScopeSelectAllBut;
+use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
 
 beforeEach(function () {
     Schema::create('scope_test_table', function (Blueprint $blueprint) {
@@ -23,7 +23,7 @@ beforeEach(function () {
 it('can query with exclude', function () {
     $class = new class extends Model
     {
-        use ScopeSelectAllBut;
+        use UsefulScopes;
 
         protected $table = 'scope_test_table';
     };
