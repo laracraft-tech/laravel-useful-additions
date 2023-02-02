@@ -14,8 +14,8 @@ beforeEach(function () {
     });
 
     $class = new ScopeTest();
-    $class->create(['foo' => 'foo1', 'bar' => 'bar1', 'quz' => 'quz1']);//auto sets created at to todoay (now)
-    $class->create(['foo' => 'foo2', 'bar' => 'bar2', 'quz' => 'quz2']);//auto sets created at to todoay (now)
+    $class->create(['foo' => 'foo1', 'bar' => 'bar1', 'quz' => 'quz1']); //auto sets created at to todoay (now)
+    $class->create(['foo' => 'foo2', 'bar' => 'bar2', 'quz' => 'quz2']); //auto sets created at to todoay (now)
     $class->create(['foo' => 'foo3', 'bar' => 'bar3', 'quz' => 'quz3', 'created_at' => now()->yesterday()]);
     $class->create(['foo' => 'foo4', 'bar' => 'bar4', 'quz' => 'quz4', 'created_at' => now()->yesterday()]);
 });
@@ -36,6 +36,7 @@ it('can query only entries created today', function () {
 
     $data->transform(function ($item) {
         $item['created_at'] = Carbon::parse($item['created_at'])->toDateString();
+
         return $item;
     });
 
@@ -50,6 +51,7 @@ it('can query only entries created yesterday', function () {
 
     $data->transform(function ($item) {
         $item['created_at'] = Carbon::parse($item['created_at'])->toDateString();
+
         return $item;
     });
 

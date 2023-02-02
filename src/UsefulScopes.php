@@ -49,7 +49,7 @@ trait UsefulScopes
     /**
      * Custom scope (query builder method) to easy return all items from today
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeFromToday($query)
@@ -60,7 +60,7 @@ trait UsefulScopes
     /**
      * Custom scope (query builder method) to easy return all items from yesterday
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeFromYesterday($query)
