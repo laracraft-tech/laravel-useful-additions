@@ -23,6 +23,7 @@ The following traits are provided in the `LaracraftTech`-namespace:
 ### UsefulEnums
 
 #### `names`, `values`, `array`
+This could be very handy if you like to **loop** over all of your **enum** types, or you maybe want to use the enum as an array, for instance in a migration.
 
 ```php
 use LaracraftTech\LaravelUsefulTraits\UsefulEnums;
