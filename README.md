@@ -56,6 +56,8 @@ Consider to **clear the cache** whenever you make a new **deployment/migration**
 
 #### `names, values, array`
 
+This could be very handy if you like to **iterate** through all of your **enum** types or you maybe want to use the enum as an array, for instance in a migration.
+
 ```php
 use LaracraftTech\LaravelUsefulTraits\UsefulEnums;
 
