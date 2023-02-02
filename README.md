@@ -22,6 +22,8 @@ The following traits are provided in the `LaracraftTech`-namespace:
 
 ### UsefulEnums
 
+---
+
 #### `names`, `values`, `array`
 This could be very handy if you like to **loop** over all of your **enum** types, or you maybe want to use the enum as an array, for instance in a migration.
 
@@ -43,6 +45,8 @@ PaymentType::array();   // return ['Pending' => 1, 'Failed' => 2, 'Success' => 3
 ```
 
 ### UsefulScopes
+
+---
 
 #### `selectAllBut`
 
@@ -74,7 +78,9 @@ and then exclude the given columns which should be **ignored** (not selected) fr
 ***Cache***: Column names of each table will be cached **until** contents of migrations **directory** is added or deleted.
 **Modifying** the contents of files inside the migrations directory will not re-cache the columns.
 Consider to **clear the cache** whenever you make a new **deployment/migration**!
+
 ---
+
 #### `fromToday`
 
 Select all entries created today.
@@ -96,7 +102,9 @@ $class->create(['foo' => 'foo2', 'bar' => 'bar2', 'quz' => 'quz2', 'created_at' 
 $class::select('foo')->fromToday()->first()->toArray();
 // return ['foo' => 'foo1']
 ```
+
 ---
+
 #### `fromYesterday`
 
 Select all entries created yesterday.
