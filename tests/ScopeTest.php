@@ -1,35 +1,57 @@
 <?php
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
-use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
+use LaracraftTech\LaravelUsefulTraits\Tests\Models\ScopeTest;
 
 beforeEach(function () {
-    Schema::create('scope_test_table', function (Blueprint $blueprint) {
+    Schema::create('scope_tests', function (Blueprint $blueprint) {
         $blueprint->string('foo');
         $blueprint->string('bar');
         $blueprint->string('quz');
+        $blueprint->timestamps();
     });
 
-    DB::table('scope_test_table')->insert([
-        'foo' => 'foo',
-        'bar' => 'bar',
-        'quz' => 'quz',
-    ]);
+    $class = new ScopeTest();
+    $class->create(['foo' => 'foo1', 'bar' => 'bar1', 'quz' => 'quz1']);//auto sets created at to todoay (now)
+    $class->create(['foo' => 'foo2', 'bar' => 'bar2', 'quz' => 'quz2']);//auto sets created at to todoay (now)
+    $class->create(['foo' => 'foo3', 'bar' => 'bar3', 'quz' => 'quz3', 'created_at' => now()->yesterday()]);
+    $class->create(['foo' => 'foo4', 'bar' => 'bar4', 'quz' => 'quz4', 'created_at' => now()->yesterday()]);
 });
 
 it('can query with exclude', function () {
-    $class = new class extends Model
-    {
-        use UsefulScopes;
+    $class = new ScopeTest();
 
-        protected $table = 'scope_test_table';
-    };
+    $data = $class::query()->selectAllBut(['foo'])->get()->toArray();
 
-    expect($class::query()->selectAllBut(['foo'])->first()->toArray())->toBe([
-        'bar' => 'bar',
-        'quz' => 'quz',
-    ]);
+    expect($data)->each->not->toHaveKey('foo');
+});
+
+it('can query only entries created today', function () {
+    $class = new ScopeTest();
+
+    //first make to array then back to collection, so that we can mutate the date
+    $data = collect($class::query()->select()->fromToday()->get()->toArray());
+
+    $data->transform(function ($item) {
+        $item['created_at'] = Carbon::parse($item['created_at'])->toDateString();
+        return $item;
+    });
+
+    expect($data->toArray())->each->toHaveKey('created_at', now()->toDateString());
+});
+
+it('can query only entries created yesterday', function () {
+    $class = new ScopeTest();
+
+    //first make to array then back to collection, so that we can mutate the date
+    $data = collect($class::query()->select()->fromYesterday()->get()->toArray());
+
+    $data->transform(function ($item) {
+        $item['created_at'] = Carbon::parse($item['created_at'])->toDateString();
+        return $item;
+    });
+
+    expect($data->toArray())->each->toHaveKey('created_at', now()->yesterday()->toDateString());
 });

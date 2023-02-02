@@ -45,4 +45,26 @@ trait UsefulScopes
             return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
         });
     }
+
+    /**
+     * Custom scope (query builder method) to easy return all items from today
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeFromToday($query)
+    {
+        return $query->whereDate('created_at', now()->today());
+    }
+
+    /**
+     * Custom scope (query builder method) to easy return all items from yesterday
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeFromYesterday($query)
+    {
+        return $query->whereDate('created_at', now()->yesterday());
+    }
 }

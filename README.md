@@ -20,41 +20,9 @@ composer require laracraft-tech/laravel-useful-traits
 
 The following traits are provided in the `LaracraftTech`-namespace:
 
-### UsefulScopes
-
-#### `selectAllBut`
-
-Select all columns but given excluded array.
-
-```php
-use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
-
-DB::table('scope_test_table')->insert([
-    'foo' => 'foo',
-    'bar' => 'bar',
-    'quz' => 'quz',
-]);
-
-$class = new class extends Model
-{
-    use UsefulScopes;
-
-    protected $table = 'scope_test_table';
-};
-
-$class::query()->selectAllBut(['foo'])->first()->toArray();
-// return ['bar' => 'bar', 'quz' => 'quz']
-```
-***Note***: Since you can't do a native "select all but x,y,z" in mysql, we need to query (and cache) the existing columns of the table,
-and then exclude the given columns which should be ignored (not selected) from the existing columns.
-
-***Cache***: Column names of each table will be cached until contents of migrations directory is added or deleted.
-Modifying the contents of files inside the migrations directory will not re-cache the columns.
-Consider to clear the cache whenever you make a new deployment/migration!
-
 ### UsefulEnums
 
-#### `names, values, array`
+#### `names`, `values`, `array`
 
 ```php
 use LaracraftTech\LaravelUsefulTraits\UsefulEnums;
@@ -73,12 +41,82 @@ PaymentType::values();  // return [1, 2, 3]
 PaymentType::array();   // return ['Pending' => 1, 'Failed' => 2, 'Success' => 3]
 ```
 
-***Note***: Since you can't do a native "select all but x,y,z" in mysql, we need to query (and cache) the existing columns of the table,
-and then exclude the given columns which should be ignored (not selected) from the existing columns.
+### UsefulScopes
 
-***Cache***: Column names of each table will be cached until contents of migrations directory is added or deleted.
-Modifying the contents of files inside the migrations directory will not re-cache the columns.
-Consider to clear the cache whenever you make a new deployment/migration!
+#### `selectAllBut`
+
+Select all columns but given excluded array.
+
+```php
+use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
+
+$class = new class extends Model
+{
+    use UsefulScopes;
+
+    protected $timestamps = false;
+    protected $table = 'scope_tests';
+};
+
+$class->create([
+    'foo' => 'foo',
+    'bar' => 'bar',
+    'quz' => 'quz',
+]);
+
+$class::query()->selectAllBut(['foo'])->first()->toArray();
+// return ['bar' => 'bar', 'quz' => 'quz']
+```
+***Note***: Since you **can't** do a native "**select all but** x,y,z" in mysql, we need to query (and cache) the existing columns of the table,
+and then exclude the given columns which should be **ignored** (not selected) from the existing columns.
+
+***Cache***: Column names of each table will be cached **until** contents of migrations **directory** is added or deleted.
+**Modifying** the contents of files inside the migrations directory will not re-cache the columns.
+Consider to **clear the cache** whenever you make a new **deployment/migration**!
+---
+#### `fromToday`
+
+Select all entries created today.
+
+```php
+use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
+
+$class = new class extends Model
+{
+    use UsefulScopes;
+
+    protected $timestamps = true;
+    protected $table = 'scope_tests';
+};
+
+$class->create(['foo' => 'foo1', 'bar' => 'bar1', 'quz' => 'quz1']);
+$class->create(['foo' => 'foo2', 'bar' => 'bar2', 'quz' => 'quz2', 'created_at' => now()->yesterday()]);
+
+$class::select('foo')->fromToday()->first()->toArray();
+// return ['foo' => 'foo1']
+```
+---
+#### `fromYesterday`
+
+Select all entries created yesterday.
+
+```php
+use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
+
+$class = new class extends Model
+{
+    use UsefulScopes;
+
+    protected $timestamps = true;
+    protected $table = 'scope_tests';
+};
+
+$class->create(['foo' => 'foo1', 'bar' => 'bar1', 'quz' => 'quz1']);
+$class->create(['foo' => 'foo2', 'bar' => 'bar2', 'quz' => 'quz2', 'created_at' => now()->yesterday()]);
+
+$class::select('foo')->fromYesterday()->first()->toArray();
+// return ['foo' => 'foo2']
+```
 
 ## Testing
 
