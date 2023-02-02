@@ -11,7 +11,7 @@ trait UsefulScopes
     /**
      * Scope a query to only exclude specific Columns.
      *
-     * @param Builder $query
+     * @param  Builder  $query
      * @param $excludeColumns
      * @return Builder
      */
