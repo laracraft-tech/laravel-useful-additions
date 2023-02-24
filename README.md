@@ -130,7 +130,7 @@ use Tests\TestCase;
 
 uses(
     Tests\TestCase::class,
-     RefreshDatabaseCustom::class
+     RefreshDatabaseFast::class
 )->in('Feature');
 ```
 
