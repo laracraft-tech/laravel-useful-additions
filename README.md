@@ -16,6 +16,12 @@ You can install the package via composer:
 composer require laracraft-tech/laravel-useful-traits
 ```
 
+Then publish the config file with:
+
+```bash
+php artisan vendor:publish --tag="laravel-useful-traits-config"
+```
+
 ## Usage
 
 The following traits are provided in the `LaracraftTech`-namespace:
@@ -125,6 +131,48 @@ $class->create(['foo' => 'foo2', 'bar' => 'bar2', 'quz' => 'quz2', 'created_at' 
 
 $class::select('foo')->fromYesterday()->first()->toArray();
 // return ['foo' => 'foo2']
+```
+
+### RefreshDatabaseFast
+
+---
+
+Credits to [Mayahi](https://mayahi.net/laravel/make-refresh-database-trait-much-faster/).
+
+This is a trait which makes the migration of your database in your test suite much, much faster!
+It basically only migrates your database if the migration files has changed.
+So the first `migrate:fresh` takes awhile (depending on how many migrations you have), and then it's incredible fast.
+
+Optionally you can set `USEFUL_TRAITS_SEED_AFTER_FAST_DB_REFRESH` to `true` if you like to seed your database after the migration.
+
+***Pest:***
+```php
+// Pest.php
+
+use LaracraftTech\LaravelUsefulTraits\RefreshDatabaseFast;
+use Tests\TestCase;
+
+uses(
+    Tests\TestCase::class,
+     RefreshDatabaseCustom::class
+)->in('Feature');
+```
+
+***PHPUnit:***
+```php
+use LaracraftTech\LaravelUsefulTraits\RefreshDatabaseFast;
+use Tests\TestCase;
+
+class MyTest extends TestCase
+{
+    use RefreshDatabaseFast;
+    
+    /** @test **/
+    public function it_does_something()
+    {
+        // ...
+    }
+}
 ```
 
 ## Testing
