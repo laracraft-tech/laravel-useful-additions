@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-useful-traits` will be documented in this file.
 
+## v1.0.3 - 2023-02-24
+
+Added `RefreshDatabaseFast` Trait
+
 ## v1.0.2 - 2023-02-02
 
 v1.0.2
