@@ -87,33 +87,9 @@ Consider to **clear the cache** whenever you make a new **deployment/migration**
 
 ---
 
-#### `fromToday`
+#### `fromToday`, `fromYesterday`
 
-Select all entries created today.
-
-```php
-use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
-
-$class = new class extends Model
-{
-    use UsefulScopes;
-
-    protected $timestamps = true;
-    protected $table = 'scope_tests';
-};
-
-$class->create(['foo' => 'foo1', 'bar' => 'bar1', 'quz' => 'quz1']);
-$class->create(['foo' => 'foo2', 'bar' => 'bar2', 'quz' => 'quz2', 'created_at' => now()->yesterday()]);
-
-$class::select('foo')->fromToday()->first()->toArray();
-// return ['foo' => 'foo1']
-```
-
----
-
-#### `fromYesterday`
-
-Select all entries created yesterday.
+Select all entries created today or yesterday.
 
 ```php
 use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
@@ -129,8 +105,8 @@ $class = new class extends Model
 $class->create(['foo' => 'foo1', 'bar' => 'bar1', 'quz' => 'quz1']);
 $class->create(['foo' => 'foo2', 'bar' => 'bar2', 'quz' => 'quz2', 'created_at' => now()->yesterday()]);
 
-$class::select('foo')->fromYesterday()->first()->toArray();
-// return ['foo' => 'foo2']
+$class::select('foo')->fromToday()->first()->toArray(); // return ['foo' => 'foo1']
+$class::select('foo')->fromYesterday()->first()->toArray(); // return ['foo' => 'foo2']
 ```
 
 ### RefreshDatabaseFast
