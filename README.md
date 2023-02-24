@@ -8,6 +8,15 @@
 
 Here we will over time share some useful Laravel traits we need in our daily work.
 
+### Traits
+
+- [`UsefulEnums`](#usefulenums)
+- [`UsefulScopes`](#usefulscopes)
+    - [`selectAllBut`](#selectallbut)
+    - [`fromToday`](#fromtoday-fromyesterday)
+    - [`fromYesterday`](#fromtoday-fromyesterday)
+- [`RefreshDatabaseFast`](#refreshdatabasefast)
+
 ## Installation
 
 You can install the package via composer:
@@ -120,6 +129,8 @@ It basically only migrates your database if the migration files has changed.
 So the first `migrate:fresh` takes awhile (depending on how many migrations you have), and then it's incredible fast.
 
 Optionally you can set `USEFUL_TRAITS_SEED_AFTER_FAST_DB_REFRESH` to `true` if you like to seed your database after the migration.
+
+Also make sure to add the `.phpunit.database.checksum` to your `.gitignore` file!
 
 ***Pest:***
 ```php
