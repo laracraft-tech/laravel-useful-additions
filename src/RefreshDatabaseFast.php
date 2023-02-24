@@ -10,6 +10,7 @@ use Symfony\Component\Finder\Finder;
 /**
  * Only migrate fresh if necessary -> much faster after first time!
  * Credits to mayahi, with some small changes of mine.
+ *
  * @link https://mayahi.net/laravel/make-refresh-database-trait-much-faster/
  */
 trait RefreshDatabaseFast
@@ -18,8 +19,6 @@ trait RefreshDatabaseFast
 
     /**
      * Only migrates fresh if necessary
-     *
-     * @return void
      */
     protected function refreshTestDatabase(): void
     {
@@ -37,12 +36,10 @@ trait RefreshDatabaseFast
     /**
      * Check if migration fresh is necessary by checking
      * if the migrations files checksum has changed.
-     *
-     * @return void
      */
     protected function runMigrationsIfNecessary(): void
     {
-        if (!$this->identicalChecksum()) {
+        if (! $this->identicalChecksum()) {
             if (config('useful-traits.refresh_db_fast.seed')) {
                 $this->seed();
             }
@@ -56,8 +53,6 @@ trait RefreshDatabaseFast
 
     /**
      * Calaculates the checksum of the migration files.
-     *
-     * @return string
      */
     private function calculateChecksum(): string
     {
@@ -74,15 +69,15 @@ trait RefreshDatabaseFast
 
         $files = array_keys(iterator_to_array($files));
 
-        $checksum = collect($files)->map(function($file) {return md5_file($file);})->implode('');
+        $checksum = collect($files)->map(function ($file) {
+        return md5_file($file);
+        })->implode('');
 
         return md5($checksum);
     }
 
     /**
      * Filepath to store the checksum.
-     *
-     * @return string
      */
     private function checksumFilePath(): string
     {
@@ -91,8 +86,6 @@ trait RefreshDatabaseFast
 
     /**
      * Creates the checksum file.
-     *
-     * @return void
      */
     private function createChecksum(): void
     {
@@ -111,8 +104,6 @@ trait RefreshDatabaseFast
 
     /**
      * Check if checksum exists.
-     *
-     * @return bool
      */
     private function isChecksumExists(): bool
     {
@@ -122,12 +113,10 @@ trait RefreshDatabaseFast
     /**
      * Check if checksum of current database migration files
      * are identical to the one we stored already.
-     *
-     * @return bool
      */
     private function identicalChecksum(): bool
     {
-        if (!$this->isChecksumExists()) {
+        if (! $this->isChecksumExists()) {
             return false;
         }
 

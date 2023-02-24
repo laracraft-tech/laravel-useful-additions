@@ -16,7 +16,6 @@ class LaravelUsefulTraitsServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-useful-traits')
-            ->hasConfigFile()
-        ;
+            ->hasConfigFile();
     }
 }

@@ -10,10 +10,6 @@ trait UsefulScopes
 {
     /**
      * Scope a query to only exclude specific Columns.
-     *
-     * @param  Builder  $query
-     * @param $excludeColumns
-     * @return Builder
      */
     public function scopeSelectAllBut(Builder $query, array $excludeColumns): Builder
     {
@@ -35,7 +31,6 @@ trait UsefulScopes
      * modifying the contents of files inside the migrations directory will not re-cache the columns
      * Whenever you make a new deployment/migration you can clear the cache.
      *
-     * @return array
      **/
     public function getTableColumns(): array
     {
