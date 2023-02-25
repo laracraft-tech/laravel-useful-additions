@@ -122,9 +122,8 @@ $class::select('foo')->fromYesterday()->first()->toArray(); // return ['foo' => 
 
 ---
 
-Credits to [Mayahi](https://mayahi.net/laravel/make-refresh-database-trait-much-faster/).
-
 This is a trait which makes the migration of your database in your test suite much, much faster!
+The base idea comes from [Mayahi](https://mayahi.net/laravel/make-refresh-database-trait-much-faster/).
 It basically only migrates your database if the migration files has changed.
 So the first `migrate:fresh` takes awhile (depending on how many migrations you have), and then it's incredible fast.
 
