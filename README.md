@@ -28,7 +28,7 @@ composer require laracraft-tech/laravel-useful-traits
 Then publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-useful-traits-config"
+php artisan vendor:publish --tag="useful-traits-config"
 ```
 
 ## Usage
