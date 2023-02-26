@@ -133,15 +133,14 @@ Also make sure to add the `.phpunit.database.checksum` to your `.gitignore` file
 
 ***Pest:***
 ```php
-// Pest.php
 
 use LaracraftTech\LaravelUsefulTraits\RefreshDatabaseFast;
-use Tests\TestCase;
 
-uses(
-    Tests\TestCase::class,
-    RefreshDatabaseFast::class
-)->in('Feature');
+uses(RefreshDatabaseFast::class);
+
+it('does_something', function() {
+    // ...
+});
 ```
 
 ***PHPUnit:***
