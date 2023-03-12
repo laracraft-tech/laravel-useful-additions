@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-useful-additions` will be documented in this file.
 
+## v3.2.0 - 2023-03-12
+
+Added options for `db:truncate` command.
+
 ## v3.1.0 - 2023-03-12
 
 Added `db:truncate` command
