@@ -174,13 +174,13 @@ This command truncates all the tables of your current database connection:
 php artisan db:truncate
 ```
 ```
-  INFO Preparing database.
+INFO Preparing database.
 
-  Truncating table: failed_jobs ......................................................................................................... 135ms DONE
-  Truncating table: migrations ........................................................................................................... 87ms DONE
-  Truncating table: password_reset_tokens ................................................................................................ 79ms DONE
-  Truncating table: personal_access_tokens ............................................................................................... 86ms DONE
-  Truncating table: users ................................................................................................................ 78ms DONE
+Truncating table: failed_jobs .............................................. 135ms DONE
+Truncating table: migrations ................................................ 87ms DONE
+Truncating table: password_reset_tokens ..................................... 79ms DONE
+Truncating table: personal_access_tokens .................................... 86ms DONE
+Truncating table: users ..................................................... 78ms DONE
 ```
 
 ## Testing
