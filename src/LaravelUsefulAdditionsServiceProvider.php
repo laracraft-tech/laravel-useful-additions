@@ -18,6 +18,6 @@ class LaravelUsefulAdditionsServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-useful-additions')
             ->hasConfigFile()
-            ->hasCommand(DBTruncateCommand::class);;
+            ->hasCommand(DBTruncateCommand::class);
     }
 }
