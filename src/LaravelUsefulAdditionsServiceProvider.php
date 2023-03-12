@@ -2,6 +2,7 @@
 
 namespace LaracraftTech\LaravelUsefulAdditions;
 
+use LaracraftTech\LaravelUsefulAdditions\Commands\DBTruncateCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -16,6 +17,7 @@ class LaravelUsefulAdditionsServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-useful-additions')
-            ->hasConfigFile();
+            ->hasConfigFile()
+            ->hasCommand(DBTruncateCommand::class);;
     }
 }
