@@ -168,19 +168,22 @@ class MyTest extends TestCase
 
 ---
 
-This command truncates all the tables of your current database connection:
+This command truncates all the tables of your current database connection. Checkout `--help` to see arguments and options. 
+It for instance, lets you also truncate only **specific** tables or disable **foreigen key checks** or maybe run in **force** mode.
 
 ```bash
 php artisan db:truncate
 ```
 ```
-INFO Preparing database.
+INFO  Start truncating tables.
 
 Truncating table: failed_jobs .............................................. 135ms DONE
 Truncating table: migrations ................................................ 87ms DONE
 Truncating table: password_reset_tokens ..................................... 79ms DONE
 Truncating table: personal_access_tokens .................................... 86ms DONE
 Truncating table: users ..................................................... 78ms DONE
+
+INFO  Finished truncating tables.
 ```
 
 ## Testing
