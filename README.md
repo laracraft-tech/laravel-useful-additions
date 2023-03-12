@@ -19,7 +19,7 @@ Here we will share some useful Laravel additions we need in our daily work.
 - 
 ### Commands
 
-- [`db:truncate`](#db:truncate)
+- [`db:truncate`](#dbtruncate)
 
 ## Installation
 
@@ -34,10 +34,6 @@ Then publish the config file with:
 ```bash
 php artisan vendor:publish --tag="useful-additions-config"
 ```
-
-## Usage
-
----
 
 ## Traits
 
