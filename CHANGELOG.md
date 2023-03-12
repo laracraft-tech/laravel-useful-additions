@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-useful-additions` will be documented in this file.
 
+## v3.0.0 - 2023-03-12
+
+Rename package
+
 ## v2.0.0 - 2023-02-24
 
 Laravel 10 Support
