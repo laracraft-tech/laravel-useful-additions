@@ -70,7 +70,7 @@ trait RefreshDatabaseFast
         $files = array_keys(iterator_to_array($files));
 
         $checksum = collect($files)->map(function ($file) {
-        return md5_file($file);
+            return md5_file($file);
         })->implode('');
 
         return md5($checksum);
