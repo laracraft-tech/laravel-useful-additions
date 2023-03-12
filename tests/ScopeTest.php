@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
-use LaracraftTech\LaravelUsefulTraits\Tests\Models\ScopeTest;
+use LaracraftTech\LaravelUsefulAdditions\Tests\Models\ScopeTest;
 
 beforeEach(function () {
     Schema::create('scope_tests', function (Blueprint $blueprint) {

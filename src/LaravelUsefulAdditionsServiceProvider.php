@@ -1,11 +1,11 @@
 <?php
 
-namespace LaracraftTech\LaravelUsefulTraits;
+namespace LaracraftTech\LaravelUsefulAdditions;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LaravelUsefulTraitsServiceProvider extends PackageServiceProvider
+class LaravelUsefulAdditionsServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -15,7 +15,7 @@ class LaravelUsefulTraitsServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-useful-traits')
+            ->name('laravel-useful-additions')
             ->hasConfigFile();
     }
 }

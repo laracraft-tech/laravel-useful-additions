@@ -1,14 +1,14 @@
-# A collection of useful Laravel traits!
+# A collection of useful Laravel additions!
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laracraft-tech/laravel-useful-traits.svg?style=flat-square)](https://packagist.org/packages/laracraft-tech/laravel-useful-traits)
-[![Tests](https://github.com/laracraft-tech/laravel-useful-traits/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/laracraft-tech/laravel-useful-traits/actions/workflows/run-tests.yml)
-[![Check & fix styling](https://github.com/laracraft-tech/laravel-useful-traits/actions/workflows/fix-php-code-style-issues.yml/badge.svg?branch=main)](https://github.com/laracraft-tech/laravel-useful-traits/actions/workflows/fix-php-code-style-issues.yml)
-[![License](https://img.shields.io/packagist/l/laracraft-tech/laravel-useful-traits.svg?style=flat-square)](https://packagist.org/packages/laracraft-tech/laravel-useful-traits)
-<!--[![Total Downloads](https://img.shields.io/packagist/dt/laracraft-tech/laravel-useful-traits.svg?style=flat-square)](https://packagist.org/packages/laracraft-tech/laravel-useful-traits)-->
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/laracraft-tech/laravel-useful-additions.svg?style=flat-square)](https://packagist.org/packages/laracraft-tech/laravel-useful-traits)
+[![Tests](https://github.com/laracraft-tech/laravel-useful-additions/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/laracraft-tech/laravel-useful-traits/actions/workflows/run-tests.yml)
+[![Check & fix styling](https://github.com/laracraft-tech/laravel-useful-additions/actions/workflows/fix-php-code-style-issues.yml/badge.svg?branch=main)](https://github.com/laracraft-tech/laravel-useful-traits/actions/workflows/fix-php-code-style-issues.yml)
+[![License](https://img.shields.io/packagist/l/laracraft-tech/laravel-useful-additions.svg?style=flat-square)](https://packagist.org/packages/laracraft-tech/laravel-useful-traits)
+<!--[![Total Downloads](https://img.shields.io/packagist/dt/laracraft-tech/laravel-useful-additions.svg?style=flat-square)](https://packagist.org/packages/laracraft-tech/laravel-useful-traits)-->
 
-Here we will over time share some useful Laravel traits we need in our daily work.
+Here we will share some useful Laravel additions we need in our daily work.
 
-### Traits
+### Useful Additions
 
 - [`UsefulEnums`](#usefulenums)
 - [`UsefulScopes`](#usefulscopes)
@@ -22,18 +22,16 @@ Here we will over time share some useful Laravel traits we need in our daily wor
 You can install the package via composer:
 
 ```bash
-composer require laracraft-tech/laravel-useful-traits
+composer require laracraft-tech/laravel-useful-additions
 ```
 
 Then publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="useful-traits-config"
+php artisan vendor:publish --tag="useful-additions-config"
 ```
 
 ## Usage
-
-The following traits are provided in the `LaracraftTech`-namespace:
 
 ### UsefulEnums
 
@@ -43,7 +41,7 @@ The following traits are provided in the `LaracraftTech`-namespace:
 This could be very handy if you like to **loop** over all of your **enum** types, or you maybe want to use the enum as an array, for instance in a migration.
 
 ```php
-use LaracraftTech\LaravelUsefulTraits\UsefulEnums;
+use LaracraftTech\LaravelUsefulAdditions\UsefulEnums;
 
 enum PaymentType: int
 {
@@ -68,7 +66,7 @@ PaymentType::array();   // return ['Pending' => 1, 'Failed' => 2, 'Success' => 3
 Select all columns but given excluded array.
 
 ```php
-use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
+use LaracraftTech\LaravelUsefulAdditions\UsefulScopes;
 
 $class = new class extends Model
 {
@@ -101,7 +99,7 @@ Consider to **clear the cache** whenever you make a new **deployment/migration**
 Select all entries created today or yesterday.
 
 ```php
-use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
+use LaracraftTech\LaravelUsefulAdditions\UsefulScopes;
 
 $class = new class extends Model
 {
@@ -127,14 +125,14 @@ The base idea comes from [Mayahi](https://mayahi.net/laravel/make-refresh-databa
 It basically **only** migrates your database if the **migration** files has **changed**.
 So the first `migrate:fresh` takes a while (depending on how many migrations you have), and then it's incredible fast.
 
-Optionally you can set `USEFUL_TRAITS_SEED_AFTER_FAST_DB_REFRESH` to `true` if you like to seed your database after the migration.
+Optionally you can set `USEFUL_ADDITIONS_SEED_AFTER_FAST_DB_REFRESH` to `true` if you like to seed your database after the migration.
 
 Also make sure to add the `.phpunit.database.checksum` to your `.gitignore` file!
 
 ***Pest:***
 ```php
 
-use LaracraftTech\LaravelUsefulTraits\RefreshDatabaseFast;
+use LaracraftTech\LaravelUsefulAdditions\RefreshDatabaseFast;
 
 uses(RefreshDatabaseFast::class);
 
@@ -145,7 +143,7 @@ it('does_something', function() {
 
 ***PHPUnit:***
 ```php
-use LaracraftTech\LaravelUsefulTraits\RefreshDatabaseFast;
+use LaracraftTech\LaravelUsefulAdditions\RefreshDatabaseFast;
 use Tests\TestCase;
 
 class MyTest extends TestCase

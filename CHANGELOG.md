@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `laravel-useful-traits` will be documented in this file.
+All notable changes to `laravel-useful-additions` will be documented in this file.
 
 ## v2.0.0 - 2023-02-24
 

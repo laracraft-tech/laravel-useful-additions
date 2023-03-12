@@ -1,12 +1,12 @@
 {
-    "name": "laracraft-tech/laravel-useful-traits",
-    "description": "A collection of useful Laravel traits!",
+    "name": "laracraft-tech/laravel-useful-additions",
+    "description": "A collection of useful Laravel additions!",
     "keywords": [
         "laracraft-tech",
         "laravel",
-        "laravel-useful-traits"
+        "laravel-useful-additions"
     ],
-    "homepage": "https://github.com/laracraft-tech/laravel-useful-traits",
+    "homepage": "https://github.com/laracraft-tech/laravel-useful-additions",
     "license": "MIT",
     "authors": [
         {
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "LaracraftTech\\LaravelUsefulTraits\\": "src",
-            "LaracraftTech\\LaravelUsefulTraits\\Database\\Factories\\": "database/factories"
+            "LaracraftTech\\LaravelUsefulAdditions\\": "src",
+            "LaracraftTech\\LaravelUsefulAdditions\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "LaracraftTech\\LaravelUsefulTraits\\Tests\\": "tests"
+            "LaracraftTech\\LaravelUsefulAdditions\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaracraftTech\\LaravelUsefulTraits\\LaravelUsefulTraitsServiceProvider"
+                "LaracraftTech\\LaravelUsefulAdditions\\LaravelUsefulAdditionsServiceProvider"
             ],
             "aliases": {
-                "LaravelUsefulTraits": "LaracraftTech\\LaravelUsefulTraits\\Facades\\LaravelUsefulTraits"
+                "LaravelUsefulAdditions": "LaracraftTech\\LaravelUsefulAdditions\\Facades\\LaravelUsefulAdditions"
             }
         }
     },

@@ -1,6 +1,6 @@
 <?php
 
-namespace LaracraftTech\LaravelUsefulTraits;
+namespace LaracraftTech\LaravelUsefulAdditions;
 
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -40,7 +40,7 @@ trait RefreshDatabaseFast
     protected function runMigrationsIfNecessary(): void
     {
         if (! $this->identicalChecksum()) {
-            if (config('useful-traits.refresh_db_fast.seed')) {
+            if (config('useful-additions.refresh_db_fast.seed')) {
                 $this->seed();
             }
 

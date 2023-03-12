@@ -1,9 +1,9 @@
 <?php
 
-namespace LaracraftTech\LaravelUsefulTraits\Tests\Models;
+namespace LaracraftTech\LaravelUsefulAdditions\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaracraftTech\LaravelUsefulTraits\UsefulScopes;
+use LaracraftTech\LaravelUsefulAdditions\UsefulScopes;
 
 class ScopeTest extends Model
 {

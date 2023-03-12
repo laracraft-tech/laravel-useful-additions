@@ -1,7 +1,7 @@
 <?php
 
-use LaracraftTech\LaravelUsefulTraits\RefreshDatabaseFast;
-use LaracraftTech\LaravelUsefulTraits\Tests\TestCase;
+use LaracraftTech\LaravelUsefulAdditions\RefreshDatabaseFast;
+use LaracraftTech\LaravelUsefulAdditions\Tests\TestCase;
 
 uses(RefreshDatabaseFast::class);
 

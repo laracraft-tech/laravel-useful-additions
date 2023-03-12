@@ -5,6 +5,6 @@ return [
         /**
          * This field determines if the database should be seeded after migration.
          */
-        'seed' => env('USEFUL_TRAITS_SEED_AFTER_FAST_DB_REFRESH', false),
+        'seed' => env('USEFUL_ADDITIONS_SEED_AFTER_FAST_DB_REFRESH', false),
     ],
 ];

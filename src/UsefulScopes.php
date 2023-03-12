@@ -1,6 +1,6 @@
 <?php
 
-namespace LaracraftTech\LaravelUsefulTraits;
+namespace LaracraftTech\LaravelUsefulAdditions;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Cache;

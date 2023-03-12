@@ -1,9 +1,9 @@
 <?php
 
-namespace LaracraftTech\LaravelUsefulTraits\Tests;
+namespace LaracraftTech\LaravelUsefulAdditions\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use LaracraftTech\LaravelUsefulTraits\LaravelUsefulTraitsServiceProvider;
+use LaracraftTech\LaravelUsefulAdditions\LaravelUsefulAdditionsServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'LaracraftTech\\LaravelUsefulTraits\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'LaracraftTech\\LaravelUsefulAdditions\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            LaravelUsefulTraitsServiceProvider::class,
+            LaravelUsefulAdditionsServiceProvider::class,
         ];
     }
 
@@ -29,7 +29,7 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         /*
-        $migration = include __DIR__.'/../database/migrations/create_laravel-useful-traits_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_laravel-useful-additions_table.php.stub';
         $migration->up();
         */
     }
