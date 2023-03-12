@@ -8,7 +8,7 @@
 
 Here we will share some useful Laravel additions we need in our daily work.
 
-### Useful Additions
+### Traits
 
 - [`UsefulEnums`](#usefulenums)
 - [`UsefulScopes`](#usefulscopes)
@@ -16,6 +16,10 @@ Here we will share some useful Laravel additions we need in our daily work.
     - [`fromToday`](#fromtoday-fromyesterday)
     - [`fromYesterday`](#fromtoday-fromyesterday)
 - [`RefreshDatabaseFast`](#refreshdatabasefast)
+- 
+### Commands
+
+- [`db:truncate`](#db:truncate)
 
 ## Installation
 
@@ -32,6 +36,10 @@ php artisan vendor:publish --tag="useful-additions-config"
 ```
 
 ## Usage
+
+---
+
+## Traits
 
 ### UsefulEnums
 
@@ -156,6 +164,27 @@ class MyTest extends TestCase
         // ...
     }
 }
+```
+
+## Commands
+
+### db:truncate
+
+---
+
+This command truncates all the tables of your current database connection:
+
+```bash
+php artisan db:truncate
+```
+```
+  INFO Preparing database.
+
+  Truncating table: failed_jobs ......................................................................................................... 135ms DONE
+  Truncating table: migrations ........................................................................................................... 87ms DONE
+  Truncating table: password_reset_tokens ................................................................................................ 79ms DONE
+  Truncating table: personal_access_tokens ............................................................................................... 86ms DONE
+  Truncating table: users ................................................................................................................ 78ms DONE
 ```
 
 ## Testing
