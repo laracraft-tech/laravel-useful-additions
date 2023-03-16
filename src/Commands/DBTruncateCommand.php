@@ -25,7 +25,7 @@ class DBTruncateCommand extends Command
 
         $foreignKeyChecks = $this->hasOption('checks') && filter_var($this->option('checks'), FILTER_VALIDATE_BOOLEAN);
 
-        if (!$foreignKeyChecks) {
+        if (! $foreignKeyChecks) {
             $this->components->warn('Disabling foreign key checks!');
             Schema::disableForeignKeyConstraints();
         }
@@ -46,7 +46,7 @@ class DBTruncateCommand extends Command
 
         $this->components->info('Finished truncating tables.');
 
-        if (!$foreignKeyChecks) {
+        if (! $foreignKeyChecks) {
             $this->components->warn('Re-enabling foreign key checks!');
             Schema::enableForeignKeyConstraints();
         }
