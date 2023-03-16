@@ -45,7 +45,7 @@ php artisan vendor:publish --tag="useful-additions-config"
 This could be very handy if you like to **loop** over all of your **enum** types, or you maybe want to use the enum as an array, for instance in a migration.
 
 ```php
-use LaracraftTech\LaravelUsefulAdditions\UsefulEnums;
+use LaracraftTech\LaravelUsefulAdditions\Traits\UsefulEnums;
 
 enum PaymentType: int
 {
@@ -70,7 +70,7 @@ PaymentType::array();   // return ['Pending' => 1, 'Failed' => 2, 'Success' => 3
 Select all columns but given excluded array.
 
 ```php
-use LaracraftTech\LaravelUsefulAdditions\UsefulScopes;
+use LaracraftTech\LaravelUsefulAdditions\Traits\UsefulScopes;
 
 $class = new class extends Model
 {
@@ -103,7 +103,7 @@ Consider to **clear the cache** whenever you make a new **deployment/migration**
 Select all entries created today or yesterday.
 
 ```php
-use LaracraftTech\LaravelUsefulAdditions\UsefulScopes;
+use LaracraftTech\LaravelUsefulAdditions\Traits\UsefulScopes;
 
 $class = new class extends Model
 {
@@ -136,7 +136,7 @@ Also make sure to add the `.phpunit.database.checksum` to your `.gitignore` file
 ***Pest:***
 ```php
 
-use LaracraftTech\LaravelUsefulAdditions\RefreshDatabaseFast;
+use LaracraftTech\LaravelUsefulAdditions\Traits\RefreshDatabaseFast;
 
 uses(RefreshDatabaseFast::class);
 
@@ -147,7 +147,7 @@ it('does_something', function() {
 
 ***PHPUnit:***
 ```php
-use LaracraftTech\LaravelUsefulAdditions\RefreshDatabaseFast;
+use LaracraftTech\LaravelUsefulAdditions\Traits\RefreshDatabaseFast;
 use Tests\TestCase;
 
 class MyTest extends TestCase

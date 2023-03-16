@@ -1,6 +1,6 @@
 <?php
 
-namespace LaracraftTech\LaravelUsefulAdditions;
+namespace LaracraftTech\LaravelUsefulAdditions\Traits;
 
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\RefreshDatabase;

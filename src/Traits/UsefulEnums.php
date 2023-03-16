@@ -1,6 +1,6 @@
 <?php
 
-namespace LaracraftTech\LaravelUsefulAdditions;
+namespace LaracraftTech\LaravelUsefulAdditions\Traits;
 
 trait UsefulEnums
 {

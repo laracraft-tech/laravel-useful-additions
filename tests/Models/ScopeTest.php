@@ -3,7 +3,7 @@
 namespace LaracraftTech\LaravelUsefulAdditions\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LaracraftTech\LaravelUsefulAdditions\UsefulScopes;
+use LaracraftTech\LaravelUsefulAdditions\Traits\UsefulScopes;
 
 class ScopeTest extends Model
 {

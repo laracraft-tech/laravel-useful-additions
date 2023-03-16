@@ -1,6 +1,6 @@
 <?php
 
-use LaracraftTech\LaravelUsefulAdditions\UsefulEnums;
+use LaracraftTech\LaravelUsefulAdditions\Traits\UsefulEnums;
 
 it('can give array of enum', function () {
     enum PaymentType: int
