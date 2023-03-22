@@ -16,7 +16,7 @@ Here we will share some useful Laravel additions we need in our daily work.
     - [`fromToday`](#fromtoday-fromyesterday)
     - [`fromYesterday`](#fromtoday-fromyesterday)
 - [`RefreshDatabaseFast`](#refreshdatabasefast)
-- 
+
 ### Commands
 
 - [`db:truncate`](#dbtruncate)
