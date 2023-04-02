@@ -39,6 +39,8 @@ php artisan vendor:publish --tag="useful-additions-config"
 
 ### UsefulEnums
 
+This trait is only available with **PHP 8.1** or higher installed.
+
 ---
 
 #### `names`, `values`, `array`

@@ -2,20 +2,22 @@
 
 namespace LaracraftTech\LaravelUsefulAdditions\Traits;
 
-trait UsefulEnums
-{
-    public static function names(): array
+if (PHP_VERSION_ID >= 80100) {
+    trait UsefulEnums
     {
-        return array_column(self::cases(), 'name');
-    }
+        public static function names(): array
+        {
+            return array_column(self::cases(), 'name');
+        }
 
-    public static function values(): array
-    {
-        return array_column(self::cases(), 'value');
-    }
+        public static function values(): array
+        {
+            return array_column(self::cases(), 'value');
+        }
 
-    public static function array(): array
-    {
-        return array_combine(self::names(), self::values());
+        public static function array(): array
+        {
+            return array_combine(self::names(), self::values());
+        }
     }
 }
