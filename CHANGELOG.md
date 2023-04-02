@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-useful-additions` will be documented in this file.
 
+## v3.4.0 - 2023-04-02
+
+###Added
+
+- backwards compatibility with PHP 7.4 and Laravel 8 and 9
+
 ## v3.3.0 - 2023-03-16
 
 traits in their own directory
