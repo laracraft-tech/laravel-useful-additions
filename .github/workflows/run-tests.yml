@@ -13,20 +13,21 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest, windows-latest]
-        php: [8.2, 8.1, 8.0, 7.4]
-        laravel: [10.*, 9.*, 8.*]
+        php: [8.3, 8.2, 8.1, 8.0, 7.4]
+        laravel: [11.*, 10.*, 9.*, 8.*]
         stability: [prefer-lowest, prefer-stable]
         include:
+          - laravel: 11.*
+            testbench: 9.*
           - laravel: 10.*
             testbench: 8.*
-            carbon: ^2.63
           - laravel: 9.*
             testbench: 7.*
-            carbon: ^2.63
           - laravel: 8.*
             testbench: 6.27
-            carbon: ^2.63
         exclude:
+          - laravel: 11.*
+            php: 8.1
           - laravel: 10.*
             php: 8.0
           - laravel: 10.*
@@ -54,7 +55,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.carbon }}" --no-interaction --no-update
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:>=2.62.1" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: List Installed Dependencies
