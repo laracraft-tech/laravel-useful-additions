@@ -2,6 +2,13 @@
 
 All notable changes to `laravel-useful-additions` will be documented in this file.
 
+## v4.0.0 - 2024-03-07
+
+### What's changed
+
+* support for Laravel 11
+* dropped Laravel 8 and PHP 7.4
+
 ## v3.4.0 - 2023-04-02
 
 ###Added
