@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-useful-additions` will be documented in this file.
 
+## v4.0.1 - 2024-07-15
+
+### What's changed
+
+* fixed migrate and seed bug by @holmesadam
+
 ## v4.0.0 - 2024-03-07
 
 ### What's changed
