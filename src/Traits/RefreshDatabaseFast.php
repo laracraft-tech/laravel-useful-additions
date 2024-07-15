@@ -40,11 +40,11 @@ trait RefreshDatabaseFast
     protected function runMigrationsIfNecessary(): void
     {
         if (! $this->identicalChecksum()) {
+            $this->artisan('migrate:fresh', $this->migrateFreshUsing());
+
             if (config('useful-additions.refresh_db_fast.seed')) {
                 $this->seed();
             }
-
-            $this->artisan('migrate:fresh', $this->migrateFreshUsing());
 
             //create checksum after migration finishes
             $this->createChecksum();
