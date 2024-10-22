@@ -4,7 +4,7 @@
 [![Tests](https://github.com/laracraft-tech/laravel-useful-additions/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/laracraft-tech/laravel-useful-traits/actions/workflows/run-tests.yml)
 [![Check & fix styling](https://github.com/laracraft-tech/laravel-useful-additions/actions/workflows/fix-php-code-style-issues.yml/badge.svg?branch=main)](https://github.com/laracraft-tech/laravel-useful-traits/actions/workflows/fix-php-code-style-issues.yml)
 [![License](https://img.shields.io/packagist/l/laracraft-tech/laravel-useful-additions.svg?style=flat-square)](https://packagist.org/packages/laracraft-tech/laravel-useful-traits)
-<!--[![Total Downloads](https://img.shields.io/packagist/dt/laracraft-tech/laravel-useful-additions.svg?style=flat-square)](https://packagist.org/packages/laracraft-tech/laravel-useful-traits)-->
+[![Total Downloads](https://img.shields.io/packagist/dt/laracraft-tech/laravel-useful-additions.svg?style=flat-square)](https://packagist.org/packages/laracraft-tech/laravel-useful-traits)
 
 Here we will share some useful Laravel additions we need in our daily work.
 
