@@ -2,6 +2,16 @@
 
 All notable changes to `laravel-useful-additions` will be documented in this file.
 
+## v4.1.0 - 2025-02-23
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/laracraft-tech/laravel-useful-additions/pull/19
+* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/laracraft-tech/laravel-useful-additions/pull/20
+* Laravel 12 Support
+
+**Full Changelog**: https://github.com/laracraft-tech/laravel-useful-additions/compare/v4.0.1...v4.1.0
+
 ## v4.0.1 - 2024-07-15
 
 ### What's changed
