@@ -124,6 +124,16 @@ $class::select('foo')->fromYesterday()->first()->toArray(); // return ['foo' => 
 
 ### RefreshDatabaseFast
 
+> **Deprecated:** We recommend using Laravel's built-in `RefreshDatabase` trait instead.
+>
+> Laravel now uses a similar approach internally (migrate once, then rollback per test), which makes
+> this trait largely redundant. Additionally, `RefreshDatabaseFast` can cause **persistent data across
+> tests** when a test is aborted unexpectedly, because the rollback may not be triggered. The small
+> performance gain of skipping the initial migration via checksum is minimal compared to the potential
+> issues this can cause.
+>
+> Use `Illuminate\Foundation\Testing\RefreshDatabase` for a more resilient testing experience.
+
 ---
 
 This is a trait which makes the migration of your database in your test suite much, **much faster**!
@@ -155,7 +165,7 @@ use Tests\TestCase;
 class MyTest extends TestCase
 {
     use RefreshDatabaseFast;
-    
+
     /** @test **/
     public function it_does_something()
     {

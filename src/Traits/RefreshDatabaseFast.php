@@ -12,6 +12,14 @@ use Symfony\Component\Finder\Finder;
  * Credits to mayahi, with some small changes of mine.
  *
  * @link https://mayahi.net/laravel/make-refresh-database-trait-much-faster/
+ *
+ * @deprecated Use Laravel's built-in RefreshDatabase trait instead.
+ * Laravel now uses a similar approach (migrate once, then rollback per test) which is more
+ * resilient. This trait can cause persistent data across tests when a test is aborted
+ * unexpectedly, because the rollback may not be triggered. The performance gain of skipping
+ * the initial migration via checksum is minimal compared to the potential issues.
+ *
+ * @see \Illuminate\Foundation\Testing\RefreshDatabase
  */
 trait RefreshDatabaseFast
 {
