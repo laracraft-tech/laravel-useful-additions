@@ -2,6 +2,20 @@
 
 All notable changes to `laravel-useful-additions` will be documented in this file.
 
+## v4.2.0 - 2026-03-24
+
+### What's Changed
+
+* RefreshDatabaseFast deprecated
+* Bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot[bot] in https://github.com/laracraft-tech/laravel-useful-additions/pull/21
+* Bump stefanzweifel/git-auto-commit-action from 4 to 6 by @dependabot[bot] in https://github.com/laracraft-tech/laravel-useful-additions/pull/22
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/laracraft-tech/laravel-useful-additions/pull/23
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/laracraft-tech/laravel-useful-additions/pull/24
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/laracraft-tech/laravel-useful-additions/pull/27
+* Bump stefanzweifel/git-auto-commit-action from 6 to 7 by @dependabot[bot] in https://github.com/laracraft-tech/laravel-useful-additions/pull/25
+
+**Full Changelog**: https://github.com/laracraft-tech/laravel-useful-additions/compare/v4.1.0...v4.2.0
+
 ## v4.1.0 - 2025-02-23
 
 ### What's Changed
