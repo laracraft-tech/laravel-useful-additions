@@ -15,7 +15,7 @@ Here we will share some useful Laravel additions we need in our daily work.
     - [`selectAllBut`](#selectallbut)
     - [`fromToday`](#fromtoday-fromyesterday)
     - [`fromYesterday`](#fromtoday-fromyesterday)
-- [`RefreshDatabaseFast`](#refreshdatabasefast)
+- [`RefreshDatabaseFast`](#refreshdatabasefast) *(deprecated)*
 
 ### Commands
 
