@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-useful-additions` will be documented in this file.
 
+## v4.3.0 - 2026-04-01
+
+### What's Changed
+
+* laravel 13 support
+* Bump dependabot/fetch-metadata from 2.5.0 to 3.0.0 by @dependabot[bot] in https://github.com/laracraft-tech/laravel-useful-additions/pull/28
+
+**Full Changelog**: https://github.com/laracraft-tech/laravel-useful-additions/compare/v4.2.0...v4.3.0
+
 ## v4.2.0 - 2026-03-24
 
 ### What's Changed
